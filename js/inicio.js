@@ -45,7 +45,7 @@ try {
       }
     };
 
-    xmlhttp.open("GET", "perguntas.json", true);
+    xmlhttp.open("GET", "js/perguntas.json", true);
     xmlhttp.send();
 
 
