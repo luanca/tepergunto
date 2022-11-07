@@ -1,0 +1,458 @@
+/* Criado por Luan Carvalho */
+
+* {
+    scrollbar-width: 5px;
+    scrollbar-color: #FFF transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #015023;
+    background-image: radial-gradient(circle at 8% 7%, rgb(1 80 35), rgb(0 15 0));
+}
+
+* {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #fff
+}
+
+input {
+    cursor: pointer
+}
+
+a:link,
+a[onclick] {
+    cursor: pointer
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="url"] {
+    background-color: rgba(10, 10, 15, 0.1);
+    border: 0px none transparent;
+    box-shadow: 0px 0px 3px #000 inset;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto;
+    margin: 3px;
+    display: inline-block;
+    text-align: left;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus {
+    background-color: rgba(10, 10, 15, 0.2);
+    outline: #000 solid 1px;
+}
+
+input[type="submit"],
+input[type="button"],
+input[type="file"] {
+    background-color: rgba(10, 10, 15, 0.4);
+    border: 0px none transparent;
+    box-shadow: 0px 0px 3px #000;
+    padding: 3px 10px;
+    border-radius: 5px;
+    width: auto;
+    margin: 3px;
+    display: inline-block;
+    text-align: left;
+}
+
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="file"]:focus,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="file"]:hover {
+    background-color: rgba(10, 10, 15, 0.6);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic
+}
+
+#jogo {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas: "h h h h" "i p p p" "f f f f";
+    grid-template-rows: 50px auto 50px;
+    grid-template-columns: 25% auto auto auto;
+    opacity: 0;
+    transition: 0.5s
+}
+
+#jh {
+    grid-area: h;
+    background-color: rgba(10, 10, 15, 0.7);
+    padding: 3px;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+    border-bottom: 1px solid #000;
+}
+
+#jp {
+    grid-area: p;
+    padding: 5px;
+    text-align: left;
+    overflow: auto;
+}
+
+#jf {
+    grid-area: f;
+    background-color: rgba(10, 10, 15, 0.4);
+    border-top: 1px solid #015023;
+    text-align: right;
+    color: #fff;
+    padding: 3px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logotipo {
+    font-family: 'Pacifico', serif;
+    font-size: 30px;
+    line-height: 36px;
+    display: inline;
+    animation-name: brilhoLogo;
+    animation-duration: 1.8s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+}
+
+@keyframes brilhoLogo {
+    from {
+        text-shadow: 0 0 15px rgb(62 255 145);
+    }
+
+    to {
+        text-shadow: 0 0 15px rgb(42 163 94);
+    }
+}
+
+#ji {
+    grid-area: i;
+    overflow: auto;
+}
+
+#ji>div {
+    background-color: rgba(10, 10, 15, 0.35);
+    padding: 4px;
+    border-bottom: 1px dashed #015023;
+}
+
+#ji h3 {
+    display: inline;
+    font-size: 17px;
+    margin-block-start: 0;
+    margin-block-end: 3px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+#jp>#l {
+    background-color: rgba(10, 10, 15, 0.2);
+    padding: 5px
+}
+
+#jp>#l>div,
+#jp>#f>div {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 2px;
+}
+
+#jp>#i,
+#jp>#f {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 2px;
+    background-color: rgba(10, 10, 15, 0.15);
+}
+
+#jp>#i p,
+#jp>#f p {
+    margin-bottom: 5px
+}
+
+#jp>#i>div {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+#jp>#i h1,
+#jp>#f h1 {
+    font-size: 30px;
+    font-family: 'Pacifico', sans-serif;
+    font-weight: normal;
+}
+
+#jp>#i h1:before,
+#jp>#f h1:before {
+    content: "∎ ";
+}
+
+#lperg {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 32px;
+    padding-left: 0px !important;
+    font-weight: normal;
+}
+
+#lresp * {
+    transition: 0.3s
+}
+
+#lresp>[rc] {
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+    background-color: rgba(10, 10, 15, 0.07);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0px rgba(240, 240, 255, 0.05);
+    display: block
+}
+
+#lresp[mr="0"]>[rc]:hover {
+    background-color: rgba(10, 10, 15, 0.27);
+}
+
+#lresp[mr="1"]>[rc] {
+    cursor: default
+}
+
+#lresp[mr="1"]> :not([rc="1"]) {
+    opacity: 0.2;
+    box-shadow: none
+}
+
+#lresp[mr="1"]>[rc="1"] {
+    box-shadow: 0 0 20px 4px rgb(240, 240, 255);
+}
+
+#lresp[mr="1"][re="1"]>#lresp1[rc="0"],
+#lresp[mr="1"][re="2"]>#lresp2[rc="0"],
+#lresp[mr="1"][re="3"]>#lresp3[rc="0"],
+#lresp[mr="1"][re="4"]>#lresp4[rc="0"] {
+    background-color: rgb(255, 150, 150);
+}
+
+#proxPerg {
+    text-align: right
+}
+
+#apresentacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.5);
+    color: #fff;
+    padding: 5vh 5vw;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 1;
+    overflow: auto;
+    transition: 1s;
+}
+
+#apresentacao>.logotipo {
+    font-size: 40px;
+    line-height: normal;
+    width: auto;
+    white-space: nowrap;
+    padding-right: 10px;
+    margin-right: 5px;
+    position: sticky;
+    top: 0;
+    margin-left: -4vw;
+}
+
+#apresentacao>#msgInicial {
+    font-size: 23px;
+    padding-left: 35px;
+    line-height: 80px;
+}
+
+#ji_ra {
+    display: inline-block;
+    grid-template-columns: auto 15% 20%;
+}
+
+#ji_ra>span {
+    font-size: 16px;
+    display: inline-block;
+    padding-left: 4px;
+    text-indent: -4px;
+    margin-bottom: 7px;
+}
+
+#ji_ra>span>i {
+    font-size: 17px
+}
+
+#ji_lj {
+    display: block
+}
+
+#ji_lj>span {
+    display: flex;
+    padding: 2px 0px;
+    flex-direction: row;
+    align-items: center;
+}
+
+#ji_lj>span:hover {
+    background-image: linear-gradient(90deg, rgba(10, 10, 15, 0.01), rgba(10, 10, 15, 0.2));
+    border-radius: 3px
+}
+
+#ji_lj>span>i {
+    padding: 4px 2px;
+}
+
+#ji_ro {
+    display: inline-block;
+    width: 100%;
+}
+
+.jogOp {
+    display: inline;
+    width: auto;
+    padding: 0 2px;
+}
+
+.jogOp>span.jol {
+    display: none;
+    text-align: right;
+    background-color: rgba(10, 10, 15, 0.85);
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    position: relative;
+    width: 133px;
+    top: -13px;
+    left: -56px;
+    margin: -12px -58px;
+}
+
+.jogOp>span.job {
+    display: block
+}
+
+.jogOp:hover {
+    background-image: linear-gradient(180deg, rgba(10, 10, 15, 0.85) 5%, rgba(10, 10, 15, 0) 60%);
+}
+
+.jogOp:hover>span.jol {
+    display: block;
+}
+
+.jop {
+    display: inline-block;
+    width: auto;
+    padding: 3px;
+}
+
+.jop:hover {
+    text-decoration: underline
+}
+
+#l_pf {
+    background-color: rgba(10, 10, 15, 0.1);
+    margin: 0;
+    padding: 0 !important;
+    display: block;
+    height: 2px;
+}
+
+#l_pf>div {
+    background-color: rgba(10, 10, 15, 0.4);
+    width: 0%;
+    display: block;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+}
+
+#iiniciar {
+    text-align: right;
+    border-top: 1px dashed #015023;
+    padding: 3px
+}
+
+/* Estilo para telas menones ( tela menor ou igual a 600px ) */
+@media screen and (max-width:600px) {
+
+    #jogo {
+        grid-template-areas: "h h h" "p p p" "i i i" "f f f";
+        grid-template-rows: 50px auto 20vh 50px;
+    }
+
+    #ji {
+        background-color: rgba(10, 10, 15, 0.35);
+    }
+
+    #apresentacao {
+        flex-direction: column;
+    }
+
+    #apresentacao>.logotipo {
+        margin-left: 0;
+    }
+
+    #apresentacao>#msgInicial {
+        padding-left: 0px;
+        line-height: normal;
+    }
+}
